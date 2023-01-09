@@ -7,7 +7,7 @@ OpenSource Software Project
 >*  올바른 OSS 라이선스 적용으로 개입 프로젝트 결과물 완성 및 공개.
 >*  세계 다양한 개발자들과 협업 기반 구축.
 
-***
+
 
 <결과물 im 또는 >
 
@@ -15,12 +15,13 @@ OpenSource Software Project
 
 
 ### 📃 선택한 오픈소스<dr>
-https://github.com/weekbook/Smart-Multitab
+https://github.com/weekbook/Smart-Multitab 
 
 Bluetooth를 이용한 원격제어 멀티탭 만들기
 
-### 🛒 준비물<dr>
+***
 
+### 🛒 준비물<dr>
 *  멀티탭(2구)
 <img src="https://user-images.githubusercontent.com/86939460/211267125-27851007-e179-48e2-9726-4c69222403bb.jpg" width="400" height="500"/>
 
@@ -46,3 +47,20 @@ Bluetooth를 이용한 원격제어 멀티탭 만들기
 *  블루투스 모듈(HM-10)
 <img src="https://user-images.githubusercontent.com/86939460/211267256-222f09f9-ac75-4950-b39f-824c6a4dd9b0.jpg" width="400" height="500"/>
 
+***
+
+### 📚 작업로그<dr>
+*  하드웨어 구축
+<도면 이미지>
+<제작 이미지>
+*  코드 작성
+<코드 첨부>
+*  앱인벤터 제작
+<앱인벤터 GUI>
+<앱인벤터 블록코딩 이미지 첨부>
+***
+
+### ✔ 기존 프로젝트와의 차별점<dr>
+<기능성>
+<사용소자>
+<코드, 블러코드 차이>
