@@ -19,7 +19,7 @@ https://github.com/weekbook/Smart-Multitab
 
 Bluetooth를 이용한 원격제어 멀티탭 만들기
 
-### 📃 선택한 오픈소스<dr>
+### 🛒 준비물<dr>
 
 *  멀티탭(2구)
 <img src="https://user-images.githubusercontent.com/86939460/211267125-27851007-e179-48e2-9726-4c69222403bb.jpg" width="400" height="500"/>
