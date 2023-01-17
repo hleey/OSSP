@@ -8,18 +8,24 @@ OpenSource Software Project
 >*  세계 다양한 개발자들과 협업 기반 구축.
 
 
-
-<결과물 im 또는 >
-
-# 내 옆의 멀티탭🔌
-
-
 ### 📃 선택한 오픈소스<dr>
 https://github.com/weekbook/Smart-Multitab 
 
-Bluetooth를 이용한 원격제어 멀티탭 만들기
-
 ***
+
+# 내 옆의 멀티탭🔌
+
+### 📃 주제<dr>
+
+<img src="https://user-images.githubusercontent.com/86939460/212869890-d6f1ca52-5aeb-4ed6-9e7c-f38408fb122b.png" width="600" height="350"/>
+<dr>
+<dr>
+<dr>
+
+Bluetooth를 이용한 원격제어 멀티탭 만들기
+<dr>
+<dr>
+<dr>
 
 ### 🛒 준비물<dr>
 *  멀티탭(2구)
@@ -53,8 +59,9 @@ Bluetooth를 이용한 원격제어 멀티탭 만들기
 ### 📚 작업로그<dr>
 ##  하드웨어 구축
 ###  1. 도면 이미지<dr>
- (툴에 HM-10모듈과 SRD-05VDC-SL-C모듈을 도저히 찾을 수 없어서 HC-05, ???모듈로 삽입했지만 핀번호와 점퍼선을 꽂은 위치 자체는 같으니 참고해주세요.)
-![image](https://user-images.githubusercontent.com/86939460/212538715-0c1bf4e6-b20d-407c-9c13-4c7e0b1dd77d.png)
+ (도면툴에서 HM-10모듈과 SRD-05VDC-SL-C모듈을 도저히 찾을 수 없어서 HM-10모듈은 HC-05모듈로, SRD-05VDC-SL-C모듈은 최대한 비슷한 모듈의 이미지로 삽입했습니다.<dr>
+  핀번호와 점퍼선을 꽂은 위치는 같으니 참고해주세요.)
+![image](https://user-images.githubusercontent.com/86939460/212859443-fd06e643-2169-42ec-bbab-4bded3b866ef.png)
 
 
 
@@ -65,12 +72,21 @@ Bluetooth를 이용한 원격제어 멀티탭 만들기
 <img src="https://user-images.githubusercontent.com/86939460/212539053-3aa2d153-f484-448f-88b0-ff5e7e7761c8.jpg" width="400" height="500"/>
 <img src="https://user-images.githubusercontent.com/86939460/212539059-3a309697-dc41-4481-88a5-beddf8d94f66.jpg" width="400" height="500"/>
 
-2) 아두이노와 릴레이모듈, 블루투스모듈 연결
+2) 아두이노와 릴레이모듈, 블루투스모듈 연결<dr>
+
+![image](https://user-images.githubusercontent.com/86939460/212861193-c67b9e91-824e-4c39-8b9a-f5a72ef4b7ae.png)
+
 
 3) 릴레이모듈과 멀티텝 연결
 (릴레이모듈의 나사를 먼저 풀어준 후 돌돌말았던 전선을 꽂고 나사를 다시 조여준다.)
 
-## 코드
+<img src="https://user-images.githubusercontent.com/86939460/212869207-0b319512-b178-4c4d-9acf-a99a438f728e.png" width="600" height="450"/>
+<img src="https://user-images.githubusercontent.com/86939460/212868466-0e9f2fc5-f7d6-4081-8adc-6a5fd3a12acb.png" width="600" height="450"/>
+<dr>
+설명을 위해 전선 하나는 꽂지 않았지만 마저 옆에 꽂아줍니다.
+
+
+## 코드수정 및 추가
 ### 1. 코드 첨부<dr>
 
 ```
@@ -113,14 +129,46 @@ void loop() {
 ### 1. 앱인벤터 GUI
 ![image](https://user-images.githubusercontent.com/86939460/212541794-f6f5f389-6750-4f7d-a148-d1825bdb8011.png)
 ![image](https://user-images.githubusercontent.com/86939460/212541803-740e5c1c-f5b5-4eb9-b484-15af215c4871.png)
+![image](https://user-images.githubusercontent.com/86939460/212875743-84594e50-e1ae-49b9-87b3-a24844aa389b.png)
 
 ### 2. 앱인벤터 블록코딩 이미지 첨부
-***
+*  현재 시간 코드<dr>
+
+![image](https://user-images.githubusercontent.com/86939460/212872228-355f2848-da9d-4832-aeeb-f10d471980e5.png)
+
+*  전원 ON/OFF 기능 코드<dr>
+
+![image](https://user-images.githubusercontent.com/86939460/212871725-22374839-30ba-4c9a-b34a-f55288869247.png)
+
+*  설정한 예약시간을 목록에 저장<dr>
+
+![image](https://user-images.githubusercontent.com/86939460/212880925-292723f6-eeb2-46d5-8710-d718f00deae3.png)
+
+*  앱 종료 후 다시 켰을 때 예약시간을 다시 불러오는 코드<dr>
+
+![image](https://user-images.githubusercontent.com/86939460/212881173-ce9f5657-e41d-4389-a512-4206c20235ee.png)
+
+*  예약시간을 삭제할 때 뜨는 선택대화창 코드<dr>
+
+![image](https://user-images.githubusercontent.com/86939460/212881897-8eba8dab-5565-4dca-a6ad-6e0c2882cad5.png)
+
+*  예약시간 삭제 코드<dr>
+
+![image](https://user-images.githubusercontent.com/86939460/212882008-8a42b061-cc28-45b0-a858-940412b2c58b.png)
+
+*  현재 시간과 예약 시간을 비교한 후 같으면 전원제어<dr>
+
+![image](https://user-images.githubusercontent.com/86939460/212882346-4ecaaaf2-7154-43a7-849a-8d7376a3d27e.png)
+
+*  블루투스 연결 코드<dr>
+
+![image](https://user-images.githubusercontent.com/86939460/212871409-d5f65c45-4837-468b-af36-cd2e6e030aff.png)
+
 
 ### ✔ 기존 프로젝트와의 차별점<dr>
 <img src="https://user-images.githubusercontent.com/86939460/212670637-e80e8d04-ba19-45da-a677-90f4a28183af.png" width="600" height="350"/>
 
-## 1. 기능성
+## 기능성
 > 기존 오픈소스
 >*  멀티탭의 전원 ON/OFF 기능
 >*  HC-06 블루투스 모듈 사용
@@ -128,4 +176,5 @@ void loop() {
 > 본 프로젝트
 >*  시간 예약 기능을 추가하여 원하는 시간에 전원을 ON/OFF 제어 가능
 >*  HM-10 블루투스 모듈로 변경
-## 2. 아두이노 코드, 앱인벤터 코드 차이
+
+
