@@ -47,20 +47,85 @@ Bluetooth를 이용한 원격제어 멀티탭 만들기
 *  블루투스 모듈(HM-10)
 <img src="https://user-images.githubusercontent.com/86939460/211267256-222f09f9-ac75-4950-b39f-824c6a4dd9b0.jpg" width="400" height="500"/>
 
+
 ***
 
 ### 📚 작업로그<dr>
-*  하드웨어 구축
-<도면 이미지>
-<제작 이미지>
-*  코드 작성
-<코드 첨부>
-*  앱인벤터 제작
-<앱인벤터 GUI>
-<앱인벤터 블록코딩 이미지 첨부>
+##  하드웨어 구축
+###  1. 도면 이미지<dr>
+ (툴에 HM-10모듈과 SRD-05VDC-SL-C모듈을 도저히 찾을 수 없어서 HC-05, ???모듈로 삽입했지만 핀번호와 점퍼선을 꽂은 위치 자체는 같으니 참고해주세요.)
+![image](https://user-images.githubusercontent.com/86939460/212538715-0c1bf4e6-b20d-407c-9c13-4c7e0b1dd77d.png)
+
+
+
+###  2. 실제 제작 이미지
+1) 멀티탭의 전선 피복 벗기기
+<img src="https://user-images.githubusercontent.com/86939460/212539035-d4700ae6-2318-48fa-8a47-5fa261be9769.jpg" width="400" height="500"/>
+<img src="https://user-images.githubusercontent.com/86939460/212539045-788943b0-cea7-40a9-9a3c-401b3bb124d2.jpg" width="400" height="500"/>
+<img src="https://user-images.githubusercontent.com/86939460/212539053-3aa2d153-f484-448f-88b0-ff5e7e7761c8.jpg" width="400" height="500"/>
+<img src="https://user-images.githubusercontent.com/86939460/212539059-3a309697-dc41-4481-88a5-beddf8d94f66.jpg" width="400" height="500"/>
+
+2) 아두이노와 릴레이모듈, 블루투스모듈 연결
+
+3) 릴레이모듈과 멀티텝 연결
+(릴레이모듈의 나사를 먼저 풀어준 후 돌돌말았던 전선을 꽂고 나사를 다시 조여준다.)
+
+## 코드
+### 1. 코드 첨부<dr>
+
+```
+#include <SoftwareSerial.h> //시리얼 통신 라이브러리 호출
+
+int Relaypin1 = 8; // 릴레이모듈 핀번호
+SoftwareSerial HM10(2, 3);  //시리얼 통신 객체선언 (블루투스모듈 tx,rx의 핀번호)
+
+void setup() {
+  pinMode(Relaypin1, OUTPUT); // RelayPin1(8번핀)을 OUTPUT으로 설정
+  Serial.begin(9600);   // 시리얼모니터 
+  HM10.begin(9600); // 블루투스 시리얼
+}
+
+void loop() {
+  if(HM10.available()){
+    int t = HM10.read(); // 블루투스모듈로 부터 들어오는 시리얼값을 변수 t로 지정
+    Serial.print(t); //
+    Serial.println(); //
+
+    if(t==0){ // 0값이 들어오는 경우 = OFF
+      digitalWrite(Relaypin1, LOW);   // 릴레이 차단
+    }
+    if(t==1){ // 1값이 들어오는 경우 = ON
+      digitalWrite(Relaypin1, HIGH);  // 릴레이 공급
+    } 
+    if(t==2){ // 예약시간과 현재시간이 같을 때 = 2
+      if(digitalRead(Relaypin1)== HIGH){ // 현재 릴레이모듈 상태가 on일때
+        digitalWrite(Relaypin1, LOW);  // off로 상태를 변경
+    }
+      else { // 현재 릴레이모듈 상태가 off일때
+        digitalWrite(Relaypin1, HIGH); // on으로 상태를 변경
+      }
+    }
+  }
+}
+```
+
+## 앱인벤터 제작
+### 1. 앱인벤터 GUI
+![image](https://user-images.githubusercontent.com/86939460/212541794-f6f5f389-6750-4f7d-a148-d1825bdb8011.png)
+![image](https://user-images.githubusercontent.com/86939460/212541803-740e5c1c-f5b5-4eb9-b484-15af215c4871.png)
+
+### 2. 앱인벤터 블록코딩 이미지 첨부
 ***
 
 ### ✔ 기존 프로젝트와의 차별점<dr>
-<기능성>
-<사용소자>
-<코드, 블러코드 차이>
+<img src="https://user-images.githubusercontent.com/86939460/212670637-e80e8d04-ba19-45da-a677-90f4a28183af.png" width="600" height="350"/>
+
+## 1. 기능성
+> 기존 오픈소스
+>*  멀티탭의 전원 ON/OFF 기능
+>*  HC-06 블루투스 모듈 사용
+
+> 본 프로젝트
+>*  시간 예약 기능을 추가하여 원하는 시간에 전원을 ON/OFF 제어 가능
+>*  HM-10 블루투스 모듈로 변경
+## 2. 아두이노 코드, 앱인벤터 코드 차이
