@@ -129,7 +129,6 @@ void loop() {
 ### 1. 앱인벤터 GUI
 ![image](https://user-images.githubusercontent.com/86939460/212541794-f6f5f389-6750-4f7d-a148-d1825bdb8011.png)
 ![image](https://user-images.githubusercontent.com/86939460/212541803-740e5c1c-f5b5-4eb9-b484-15af215c4871.png)
-![image](https://user-images.githubusercontent.com/86939460/212875743-84594e50-e1ae-49b9-87b3-a24844aa389b.png)
 
 ### 2. 앱인벤터 블록코딩 이미지 첨부
 *  현재 시간 코드<dr>
@@ -169,12 +168,34 @@ void loop() {
 <img src="https://user-images.githubusercontent.com/86939460/212670637-e80e8d04-ba19-45da-a677-90f4a28183af.png" width="600" height="350"/>
 
 ## 기능성
-> 기존 오픈소스
->*  멀티탭의 전원 ON/OFF 기능
->*  HC-06 블루투스 모듈 사용
+### 기존 오픈소스
+1. 멀티탭의 전원 ON/OFF 기능만 존재
 
-> 본 프로젝트
->*  시간 예약 기능을 추가하여 원하는 시간에 전원을 ON/OFF 제어 가능
->*  HM-10 블루투스 모듈로 변경
+ ![image](https://user-images.githubusercontent.com/86939460/212885018-b186ac45-ed60-465f-8bdd-698f42ea43fb.png)
 
+2.   HC-06(classic) 블루투스 모듈 사용
+<img src="https://user-images.githubusercontent.com/86939460/212887135-7a137647-91db-4e34-b9af-13245d7e0391.png" width="500" height="200"/>
+
+단점: ios 사용불가
+
+<dr>
+<dr>
+
+ ### 본 프로젝트
+*  멀티탭의 전원 ON/OFF + 시간예약 기능 추가
+
+<img src="https://user-images.githubusercontent.com/86939460/212875743-84594e50-e1ae-49b9-87b3-a24844aa389b.png" width="600" height="350"/>
+
+<dr>
+
+
+*  HM-10(BLE) 블루투스 모듈로 변경
+
+<img src="https://user-images.githubusercontent.com/86939460/211267256-222f09f9-ac75-4950-b39f-824c6a4dd9b0.jpg" width="400" height="500"/>
+
+장점<dr>
+1) iOS & Android 사용가능<dr>
+2) 저전력으로 다양한 소형 전자기기들을 지원<dr>
+3) 클래식 블루투스 포함<dr>
+4) 고속 블루투스<dr>
 
